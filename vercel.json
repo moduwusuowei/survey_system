@@ -1,9 +1,6 @@
 {
-  "build": {
-    "env": {
-      "NODE_ENV": "production"
-    }
-  },
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/dist",
   "functions": {
     "backend/app/main.py": {
       "runtime": "@vercel/python@3.0.0"
@@ -12,16 +9,11 @@
   "routes": [
     {
       "src": "/((?!api|_next|static|favicon.ico).*)",
-      "dest": "/frontend/index.html"
+      "dest": "/index.html"
     },
     {
       "src": "/api/(.*)",
       "dest": "backend/app/main.py"
-    },
-    {
-      "src": "/api",
-      "dest": "backend/app/main.py"
     }
-  ],
-  "outputDirectory": "frontend/dist"
+  ]
 }
