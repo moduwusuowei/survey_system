@@ -27,7 +27,7 @@ for s in surveys:
 
     if end_date:
         # 解析 ISO 格式日期
-        if end_date.endswith('Z'):p
+        if end_date.endswith('Z'):
             end_date = end_date[:-1] + '+00:00'
         end_dt = datetime.fromisoformat(end_date)
         # 确保 end_dt 是 aware datetime

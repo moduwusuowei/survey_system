@@ -1,0 +1,30 @@
+{
+  "build": {
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "functions": {
+    "backend/main.py": {
+      "runtime": "@vercel/python@3.0.0"
+    }
+  },
+  "routes": [
+    // 1. 前端路由：所有页面走 Vue
+    {
+      "src": "/((?!api|_next|static|favicon.ico).*)",
+      "dest": "/frontend/index.html"
+    },
+    // 2. 后端接口：/api/* 转发到 FastAPI
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/app/main.py"
+    },
+    // 3. 根路径 /api 也转发
+    {
+      "src": "/api",
+      "dest": "backend/app/main.py"
+    }
+  ],
+  "outputDirectory": "frontend/dist"
+}
