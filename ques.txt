@@ -1,1 +1,9 @@
-The pattern "backend/app/main.py" defined in `functions` doesn't match any Serverless Functions inside the `api` directory.
+Running build in Washington, D.C., USA (East) – iad1
+Build machine configuration: 2 cores, 8 GB
+Cloning github.com/moduwusuowei/survey_system (Branch: master, Commit: bdb8811)
+Skipping build cache, deployment was triggered without cache.
+Cloning completed: 749.000ms
+Running "vercel build"
+Vercel CLI 54.10.2
+Error: The pattern "backend/app/main.py" defined in `functions` doesn't match any Serverless Functions inside the `api` directory.
+Learn More: https://vercel.link/unmatched-function-pattern
